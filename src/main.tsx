@@ -9,23 +9,27 @@ import AppProps from "./AppProps.tsx";
 import AppQuery from "./AppQuery.tsx";
 import AppAxios from "./AppAxios.tsx";
 import AppQueryHook from "./AppQueryHook.tsx";
+import AppZustand from "./AppZustand.tsx";
 
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <AppProps />
+    <AppZustand />
     <hr />
-    <AppAxios />
+    <AppContext />
+    <hr />
+    <AppReducer />
     <hr />
     <QueryClientProvider client={queryClient}>
       <AppQuery />
       <hr />
       <AppQueryHook />
     </QueryClientProvider>
+    <AppProps />
     <hr />
-    <AppReducer />
+    <AppAxios />
     <hr />
-    <AppContext />
+    <AppProps />
   </StrictMode>
 );
