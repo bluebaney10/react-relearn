@@ -13,6 +13,7 @@ import AppZustand from "./AppZustand.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
+import AppSetState from "./AppSetState.tsx";
 
 const queryClient = new QueryClient();
 
@@ -41,5 +42,7 @@ createRoot(document.getElementById("root")!).render(
     <AppAxios />
     <hr />
     <AppProps />
+    <hr />
+    <AppSetState />
   </StrictMode>
 );
