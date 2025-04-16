@@ -1,7 +1,12 @@
 import { createContext, useState } from "react";
-export const DataContext = createContext();
+import ContextComponent from "./components/ContextComponent";
+export const DataContext = createContext<UserInfo | null>(null);
 
-import Context from "./components/Context";
+export interface UserInfo {
+  name: string;
+  age: number;
+  position: string;
+}
 
 function AppContext() {
   const [data, setData] = useState({
@@ -12,8 +17,9 @@ function AppContext() {
 
   return (
     <>
+      <h2>State management with context</h2>
       <DataContext.Provider value={data}>
-        <Context />
+        <ContextComponent />
       </DataContext.Provider>
     </>
   );

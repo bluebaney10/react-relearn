@@ -5,12 +5,12 @@ type Props = {
   onSelectItem: (item: string) => void;
 };
 
-const ListGroup = ({ items, onSelectItem }: Props) => {
+const PropsListGroup = ({ items, onSelectItem }: Props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <>
-      <h1>List</h1>
+      <h3>List</h3>
       <ul className="list-group">
         {items.map((item, index) => (
           <li
@@ -33,4 +33,4 @@ const ListGroup = ({ items, onSelectItem }: Props) => {
   );
 };
 
-export default ListGroup;
+export default PropsListGroup;

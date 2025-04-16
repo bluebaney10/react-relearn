@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 
 interface Todo {
   id: number;
@@ -9,10 +8,10 @@ interface Todo {
   completed: boolean;
 }
 
-const TodoList = () => {
+const QueryTodoList = () => {
   const fetchTodos = () =>
     axios
-      .get<Todo[]>("https://jsonplaceholder.typicode.com/todos")
+      .get<Todo[]>("https://jsonplaceholder.typicode.com/todos?_limit=10")
       .then((res) => res.data);
 
   const {
@@ -38,4 +37,4 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+export default QueryTodoList;

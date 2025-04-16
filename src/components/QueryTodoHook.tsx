@@ -1,6 +1,6 @@
 import useTodos from "../hooks/useTodos";
 
-const TodoHook = () => {
+const QueryTodoHook = () => {
   const { data: todos, error, isLoading } = useTodos();
 
   if (isLoading) return <p>Loading...</p>;
@@ -17,4 +17,4 @@ const TodoHook = () => {
   );
 };
 
-export default TodoHook;
+export default QueryTodoHook;

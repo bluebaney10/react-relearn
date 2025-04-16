@@ -1,12 +1,12 @@
 import axios, { AxiosError } from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface User {
   id: number;
   name: string;
 }
 
-const ListUser = () => {
+const AxiosFetchListUser = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [error, setError] = useState("");
 
@@ -16,7 +16,7 @@ const ListUser = () => {
         const res = await axios.get<User[]>(
           "https://jsonplaceholder.typicode.com/users"
         );
-        setUsers(res.data);
+        setUsers(res.data.slice(0, 10));
       } catch (err) {
         setError((err as AxiosError).message);
       }
@@ -26,7 +26,7 @@ const ListUser = () => {
   }, []);
   return (
     <>
-      <h2>ListUser</h2>
+      <h3>ListUser</h3>
       {error && <p className="text-danger">{error}</p>}
       <ul>
         {users.map((user) => (
@@ -37,4 +37,4 @@ const ListUser = () => {
   );
 };
 
-export default ListUser;
+export default AxiosFetchListUser;
