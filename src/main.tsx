@@ -10,11 +10,21 @@ import AppQuery from "./AppQuery.tsx";
 import AppAxios from "./AppAxios.tsx";
 import AppQueryHook from "./AppQueryHook.tsx";
 import AppZustand from "./AppZustand.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home.tsx";
+import About from "./pages/About.tsx";
 
 const queryClient = new QueryClient();
 
+const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "about", element: <About /> },
+]);
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <RouterProvider router={router} />
+    <hr />
     <AppZustand />
     <hr />
     <AppContext />
