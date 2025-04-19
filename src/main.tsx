@@ -14,6 +14,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
 import AppSetState from "./AppSetState.tsx";
+import AppZustandAuthState from "./AppZustandAuthState.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <AppZustandAuthState />
+    <hr />
     <RouterProvider router={router} />
     <hr />
     <AppZustand />
