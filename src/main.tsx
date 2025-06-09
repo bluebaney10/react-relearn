@@ -15,6 +15,9 @@ import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
 import AppSetState from "./AppSetState.tsx";
 import AppZustandAuthState from "./AppZustandAuthState.tsx";
+import AppQueryPostList from "./AppQueryPostList.tsx";
+import AppUseState from "./AppuseState.tsx";
+import AppUseReducer from "./AppUseReducer.tsx";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +28,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <AppUseReducer />
+    <hr />
+    <AppUseState />
+    <hr />
     <AppZustandAuthState />
     <hr />
     <RouterProvider router={router} />
@@ -36,6 +43,8 @@ createRoot(document.getElementById("root")!).render(
     <AppReducer />
     <hr />
     <QueryClientProvider client={queryClient}>
+      <AppQueryPostList />
+      <hr />
       <AppQuery />
       <hr />
       <AppQueryHook />
